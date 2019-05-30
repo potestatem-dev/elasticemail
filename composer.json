@@ -1,0 +1,22 @@
+{
+	"name": "potestatem-dev/elasticemail",
+	"description": "Plugin para envio de email com Elastic Email usando Laravel",
+	"type": "library",
+	"homepage": "https://github.com/potestatem-dev/elasticemail",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Henrique Marques",
+			"email": "henriquembarros@gmail.com"
+		}
+	],
+	"minimum-stability": "stable",
+	"require": {
+		"laravel/framework": "5.1.x|5.2.x|5.3.x"
+	},
+	"autoload": {
+		"psr-4": {
+			"PotestatemDev\\ElasticEmail\\": "src"
+		}
+	}
+}
