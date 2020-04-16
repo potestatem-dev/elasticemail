@@ -4,6 +4,7 @@ namespace PotestatemDev\ElasticEmail;
 
 use Illuminate\Mail\Transport\Transport;
 use Swift_Mime_Message;
+use Illuminate\Support\Facades\Log;
 
 class ElasticTransport extends Transport 
 {
@@ -18,6 +19,7 @@ class ElasticTransport extends Transport
     public function send(Swift_Mime_Message $message, &$failedRecipients = null) 
     {
         $this->beforeSendPerformed($message);
+        Log::info($this->key);
         $post = ['from' => $this->getFromAddress($message)['email'],
             'fromName' => $this->getFromAddress($message)['name'],
             'apikey' => $this->key,
