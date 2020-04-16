@@ -37,6 +37,10 @@ class ElasticTransport extends Transport
                         $post['file_contacts'] = new \CURLFile($var[0], 'text/csv', $var[1]);
                         $post['mergeSourceFilename'] = $var[1];
                     }
+
+                    if($field == 'api_key'){
+                        $post['apikey'] = $var;
+                    }
                 }
             }
         }
