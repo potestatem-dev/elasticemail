@@ -19,7 +19,6 @@ class ElasticTransport extends Transport
     public function send(Swift_Mime_Message $message, &$failedRecipients = null) 
     {
         $this->beforeSendPerformed($message);
-        Log::info($this->key);
         $post = ['from' => $this->getFromAddress($message)['email'],
             'fromName' => $this->getFromAddress($message)['name'],
             'apikey' => $this->key,
@@ -46,6 +45,7 @@ class ElasticTransport extends Transport
                 }
             }
         }
+        Log::info($post['apikey']);
 
         $ch = curl_init();
         curl_setopt_array($ch, [
